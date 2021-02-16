@@ -13,3 +13,7 @@ Include the files used
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
+# project
+# 4 Tasks: Improve Documentation
+# Section 2C
+# Comments added in order to modify file
