@@ -17,3 +17,8 @@ It's important to give proper credit. Add links to any repo that inspired you or
 # 4 Tasks: Improve Documentation
 # Section 2C
 # Comments added in order to modify file
+
+# Project
+# 4 Tasks: Improve documentation
+# Section 3 A
+# Comments added in order to modify file
