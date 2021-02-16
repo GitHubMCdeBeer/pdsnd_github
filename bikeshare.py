@@ -1,3 +1,5 @@
+#Used as part of Github Project 5 - Refactor Code - Section 4
+#Adding 2nd change for Github Prj 5 - Refactor Code - Section 4
 import time
 import pandas as pd
 import numpy as np
@@ -19,16 +21,16 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # variable to store city choice
     city = ''
-    # get input   
+    # get input
     while city not in CITY_DATA.keys():
         print('Please choose city:"\n "Chicago"\n "New York city"\n "Washington"\n')
         city = input().lower()
         #print('selected city:', city)
         if city not in CITY_DATA.keys():
             print("ERROR: Check input. Type City name in full and correctly")
-    
+
     #print(f'Selected city {city.title()}')
-      
+
     # TO DO: get user input for month (all, january, february, ... , june)
     # Define month list
     month_list = ['january','february','march','april','may','june','all']
@@ -41,7 +43,7 @@ def get_filters():
         #print('selected month:', month)
         if month not in month_list:
             print("ERROR: Check input. Type month name in full and correctly else select all")
-    
+
     # print(f'Selected month {month.title()}')
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     # Define day list
@@ -55,7 +57,7 @@ def get_filters():
         #print('selected day:', day)
         if day not in day_list:
             print("ERROR: Check input. Type day name in full and correctly else select all")
-            
+
     #print(f'Selected day {day.title()}')
 
     print('-'*40)
@@ -86,19 +88,19 @@ def load_data(city, month, day):
     #print(df)
     #print(df['month'])
     #print(df['day'])
-    
+
     #do month filter if required
     #print('month used to filter:', month)
     if month != 'all':
         df = df[df['month'] == month]
         #print(df)
-    
+
     #do day filter if required
     #print('day used to filter:',day)
     if day != 'all':
         df = df[df['day'] == day]
         #print(df)
-        
+
     return df
 
 
@@ -164,7 +166,7 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print(f'Mean travel time: {mean_travel_time}')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -182,14 +184,14 @@ def user_stats(df):
     # TO DO: Display counts of gender
     gender_count = df['Gender'].value_counts()
     print(f'Gender count:\n{gender_count}')
-    
+
     # TO DO: Display earliest, most recent, and most common year of birth
     earliest_birth = int(df['Birth Year'].min())
     print(f'Earliest birth date: {earliest_birth}')
-    
+
     latest_birth = int(df['Birth Year'].max())
     print(f'Latest birth date: {latest_birth}')
-    
+
     most_common_birth_year = int(df['Birth Year'].mode()[0])
     print(f'Most common birth year: {most_common_birth_year}')
 
@@ -203,7 +205,7 @@ def main():
         response = ''
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        while response != 'yes' and response != 'no': 
+        while response != 'yes' and response != 'no':
             print('view raw data? - Yes or No')
             response = input().lower()
             if response == 'yes':
@@ -212,12 +214,12 @@ def main():
                     #response = ''
                     print('view more raw data? - Yes or No')
                     response = input().lower()
-                    counter += 5 
+                    counter += 5
                     print(df[counter:counter+5])
             elif print('invalid entry: reselect'):
                 response = ''
-            
-            
+
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
