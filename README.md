@@ -20,5 +20,10 @@ It's important to give proper credit. Add links to any repo that inspired you or
 
 # Project
 # 4 Tasks: Improve documentation
-# Section 3 A
+# Section 3 C
 # Comments added in order to modify file
+
+# Project
+# 4 Tasks: Improve documentation
+# Section 3 C
+# 2nd Comments added in order to modify file
